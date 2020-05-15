@@ -27,5 +27,7 @@ npm run test-local
 
 ## new contract address
 - network: `rinkeby`
-- SocialMoney: `0xf73ad7Db73716fa9832D6c35519108255f892852`
-- SocialMoneyFactory: `0x57DAE729e185B0b7e22636F6d4D3214c800C086b`
+- SocialMoney: `0x0d8c05d08bB619307AA8b611579ab357a4A08517`
+- SocialMoneyFactory: `0x9d21FDB292e69F3EF3d5De96D92248d314003fca`
+
+
