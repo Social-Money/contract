@@ -18,8 +18,14 @@ npm run compile
 ```bash
 npm run test-local
 ```
+- account: `0x0d8E708F9CfF2634169D7c221CF6bfA0C5731d63`
 
-## contract address
+## old contract address
 - network: `rinkeby`
 - SocialMoney: `0x74c100Ce3CD236DfE5e8eC2aDbe4888baD4F77Ca`
 - SocialMoneyFactory: `0x926C352cA0F70742227dDc3613Ba7CBB787CC589`
+
+## new contract address
+- network: `rinkeby`
+- SocialMoney: `0xf73ad7Db73716fa9832D6c35519108255f892852`
+- SocialMoneyFactory: `0x57DAE729e185B0b7e22636F6d4D3214c800C086b`

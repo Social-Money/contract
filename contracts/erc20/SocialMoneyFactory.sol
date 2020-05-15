@@ -10,7 +10,7 @@ contract SocialMoneyFactory {
   |       Events And Variables        |
   |__________________________________*/
 
-  event NewToken(uint256 token_id, address indexed owner, address indexed token);
+  event NewToken(uint256 token_id, address indexed owner, address indexed token, uint total_supply, string name, string symbol, uint decimals);
 
   address public tokenTemplate;
   uint256 public tokenCount;
@@ -33,18 +33,20 @@ contract SocialMoneyFactory {
     exchangeTemplate = template;
   } */
 
-  function createToken(string memory _name, string memory _symbol) public returns (address) {
+  function createToken(string memory name, string memory symbol) public returns (address) {
+    uint total_supply = 21000;
+    uint decimals = 18;
     address owner = msg.sender;
     require(owner != address(0));
     require(tokenTemplate != address(0));
     require(owner_to_token[owner] == address(0), "you already created token");
-    SocialMoney token = new SocialMoney(_name, _symbol, 18);
+    SocialMoney token = new SocialMoney(name, symbol, 18);
     owner_to_token[owner] = address(token);
     token_to_owner[address(token)] = owner;
     uint256 token_id = tokenCount + 1;
     tokenCount = token_id;
     id_to_token[token_id] = address(token);
-    emit NewToken(token_id, owner, address(token));
+    emit NewToken(token_id, owner, address(token), total_supply, name, symbol, decimals);
     return address(token);
   }
 

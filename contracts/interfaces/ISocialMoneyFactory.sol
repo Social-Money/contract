@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 interface IUniswapFactory {
-  event NewToken(uint256 token_id, address indexed owner, address indexed token);
+  event NewToken(uint256 token_id, address indexed owner, address indexed token, uint total_supply, string name, string symbol, uint decimals);
 
   function initializeFactory(address template) external;
   function createToken() external returns (address payable);
