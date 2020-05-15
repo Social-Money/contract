@@ -27,7 +27,10 @@ contract("SocialMoney", async accounts => {
     const owner = await tokenInstance.methods.owner().call();
     const name = await tokenInstance.methods.name().call();
     const symbol = await tokenInstance.methods.symbol().call();
-    assert.equal(totalSupply, 21000);
+    const balanceOf = await tokenInstance.methods.balanceOf(a0).call();
+    console.log('balanceOf: ', balanceOf);
+    
+    assert.equal(totalSupply, 21000000);
     // assert.equal(owner, a0);
     assert.equal(name, '奥利给');
     assert.equal(symbol, 'ALG');

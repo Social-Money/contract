@@ -34,13 +34,14 @@ contract SocialMoneyFactory {
   } */
 
   function createToken(string memory name, string memory symbol) public returns (address) {
-    uint total_supply = 21000;
-    uint decimals = 18;
+    uint total_supply = 21000000;
+    uint8 decimals = 4;
     address owner = msg.sender;
     require(owner != address(0));
     require(tokenTemplate != address(0));
     require(owner_to_token[owner] == address(0), "you already created token");
-    SocialMoney token = new SocialMoney(name, symbol, 18);
+    SocialMoney token = new SocialMoney(name, symbol, decimals, total_supply);
+    token.transfer(owner, total_supply);
     owner_to_token[owner] = address(token);
     token_to_owner[address(token)] = owner;
     uint256 token_id = tokenCount + 1;

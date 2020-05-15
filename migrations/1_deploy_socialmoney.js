@@ -10,11 +10,15 @@ module.exports = function(deployer, network, accounts) {
   // const rate = 10000;
   // const wallet = accounts[0];
   return deployer.then(() => {
-    return deployer.deploy(SocialMoney, _name, _symbol, _decimals);
-  }).then(() => {
+    // return deployer.deploy(SocialMoney, _name, _symbol, _decimals);
     return deployer.deploy(
       SocialMoneyFactory,
-      SocialMoney.address
+      '0x0d8c05d08bB619307AA8b611579ab357a4A08517'
     );
+  }).then(() => {
+    /* return deployer.deploy(
+      SocialMoneyFactory,
+      SocialMoney.address
+    ); */
   })
 };
