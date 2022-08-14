@@ -20,7 +20,7 @@
   "author": "zxplus (https://github.com/shellteo)",
   "license": "ISC",
   "dependencies": {
-    "@openzeppelin/contracts": "^2.4.0",
+    "@openzeppelin/contracts": "^4.7.2",
     "truffle-flattener": "^1.4.2",
     "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.2.4"
